@@ -12,7 +12,7 @@ int main() {
      "пройти лабиринт, собирая монеты. Вы можете ходить только прямо, вправо, влево и "
      "назад \nКоманды: \n2 - шаг вперед \n8 - шаг назад \n4 - шаг влево "
      "\n6 - шаг право \nУдачной игры!\n");
-  
+
   int labirint[25][25] = {
       {2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2},
       {2, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 2},
@@ -42,7 +42,7 @@ int main() {
   };
 
 
-  
+
   print_labirint(labirint);
   int x = 0, y = 1;
   int indicator;
@@ -52,13 +52,21 @@ int main() {
     scanf("%d", &indicator);
     go(labirint, x, y, indicator);
     if (indicator == 2) {
-      x++;
+      if (labirint[x][y] == 1) {
+        x++;
+      }
     } else if (indicator == 8) {
-      x--;
+      if (labirint[x][y] == 1) {
+        x--;
+      }
     } else if (indicator == 6) {
-      y++;
+      if (labirint[x][y] == 1) {
+        y++;
+      }
     } else if (indicator == 4) {
-      y--;
+      if (labirint[x][y] == 1) {
+        y--;
+      }
     } else {
       printf("Неверный ход");
     }
