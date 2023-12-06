@@ -52,19 +52,19 @@ int main() {
     scanf("%d", &indicator);
     go(labirint, x, y, indicator);
     if (indicator == 2) {
-      if (labirint[x][y] == 1) {
+      if (labirint[x][y] == 1 || labirint[x][y] == 4) {
         x++;
       }
     } else if (indicator == 8) {
-      if (labirint[x][y] == 1) {
+      if (labirint[x][y] == 1 || labirint[x][y] == 4) {
         x--;
       }
     } else if (indicator == 6) {
-      if (labirint[x][y] == 1) {
+      if (labirint[x][y] == 1 || labirint[x][y] == 4) {
         y++;
       }
     } else if (indicator == 4) {
-      if (labirint[x][y] == 1) {
+      if (labirint[x][y] == 1 || labirint[x][y] == 4) {
         y--;
       }
     } else {
@@ -99,7 +99,7 @@ void print_labirint(int array[n][m]) { // печать лабиринта
 
 void go(int array[n][m], int x, int y, int indicator) {
   if (indicator == 2) {
-    if (array[x + 1][y] == 1) {
+    if (array[x + 1][y] == 1 || array[x+1][y] == 4) {
       system("clear");
       array[x + 1][y] = 3;
       array[x][y] = 1;
@@ -110,7 +110,7 @@ void go(int array[n][m], int x, int y, int indicator) {
     }
 
   } else if (indicator == 8) {
-    if (array[x - 1][y] == 1) {
+    if (array[x - 1][y] == 1 || array[x-1][y] == 4) {
       system("clear");
       array[x - 1][y] = 3;
       array[x][y] = 1;
@@ -120,7 +120,7 @@ void go(int array[n][m], int x, int y, int indicator) {
       printf("Неверный ход");
     }
   } else if (indicator == 6) {
-    if (array[x][y + 1] == 1) {
+    if (array[x][y + 1] == 1 || array[x][y + 1] == 4) {
       system("clear");
       array[x][y + 1] = 3;
       array[x][y] = 1;
@@ -130,7 +130,7 @@ void go(int array[n][m], int x, int y, int indicator) {
       printf("Неверный ход");
     }
   } else if (indicator == 4) {
-    if (array[x][y - 1] == 1) {
+    if (array[x][y - 1] == 1 || array[x][y-1] == 4) {
       system("clear");
       array[x][y - 1] = 3;
       array[x][y] = 1;
